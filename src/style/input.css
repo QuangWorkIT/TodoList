@@ -1,0 +1,15 @@
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  cursor: pointer;
+}
+
+button:hover {
+ cursor: pointer;
+}
+
+label {
+    font-weight: bold;
+}
