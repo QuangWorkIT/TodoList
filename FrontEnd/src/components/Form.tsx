@@ -19,6 +19,11 @@ function Form({ onAddTask, isAdd }: Props) {
         const des = formData.get("des") as string || ""
         const dueDate = formData.get("date") as string || ""
 
+        if (!title || !des || !dueDate) {
+            console.error('Invalid task')
+            return
+        }
+        console.log(title + des + dueDate)
         const task: Task = {
             title: title,
             des: des,
