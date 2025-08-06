@@ -36,7 +36,7 @@ app.post('/tasks', async (req, res) => {
 
         await fs.writeFile('./src/Tasks.txt', JSON.stringify(tasks, null, 2), 'utf-8')
         console.log('File saved successfully')
-        res.json({ message: 'save task success' })
+        res.json({ message: 'save task success', tasks: tasks })
     } catch (error) {
         console.log('Error write file ', error)
         res

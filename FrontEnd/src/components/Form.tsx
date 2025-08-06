@@ -23,7 +23,6 @@ function Form({ onAddTask, isAdd }: Props) {
             console.error('Invalid task')
             return
         }
-        console.log(title + des + dueDate)
         const task: Task = {
             title: title,
             des: des,

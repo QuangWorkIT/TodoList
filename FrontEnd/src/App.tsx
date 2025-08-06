@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import Form from './components/Form'
 import TableData from './components/TableData'
@@ -10,6 +10,7 @@ function App() {
   const [isAdd, setAdd] = useState(false)
   const [tasks, setTasks] = useState<Task[]>([])
   const [isSaving, setIsSaving] = useState(false)
+  const isInit = useRef(true)
   // fetch tasks
   useEffect(() => {
     const fetchTasks = async () => {
@@ -64,6 +65,10 @@ function App() {
   }
 
   const handleSave = async (saveTasks: Task[]) => {
+    if (isInit.current) {
+      isInit.current = false
+      return
+    }
     console.log('tasks to save ', tasks)
     setIsSaving(true)
     await fetch('http://localhost:3000/tasks', {
