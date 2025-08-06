@@ -11,10 +11,11 @@ function App() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [isSaving, setIsSaving] = useState(false)
   const isInit = useRef(true)
+  const url = import.meta.env.VITE_BACKEND_URL
   // fetch tasks
   useEffect(() => {
     const fetchTasks = async () => {
-      await fetch('http://localhost:3000/tasks', {
+      await fetch(`${url}/tasks`, {
         method: "GET"
       })
         .then((response) => {
@@ -71,7 +72,7 @@ function App() {
     }
     console.log('tasks to save ', tasks)
     setIsSaving(true)
-    await fetch('http://localhost:3000/tasks', {
+    await fetch(`${url}/tasks`, {
       method: "POST",
       body: JSON.stringify({
         tasks: saveTasks
