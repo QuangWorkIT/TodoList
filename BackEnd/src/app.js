@@ -1,9 +1,17 @@
 const express = require('express')
 const cors = require('cors')
 const fs = require('fs').promises
+
+require('dotenv').config()
 const app = express()
 
-app.use(cors())
+const origin = process.env.ALLOWED_ORIGIN
+app.use(cors({
+  origin: origin, // Only allow this origin
+  methods: ['GET', 'POST'],             // Only allow these HTTP methods
+  allowedHeaders: ['Content-Type'],     // Only allow these headers
+}))
+
 app.use(express.json())
 
 app.get('/', (req, res) => {
