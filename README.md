@@ -46,4 +46,4 @@ A minimal, clean and interactive task manager built with React, TypeScript and N
 
 ## 👤 Author
 
-QuangWorkIT[https://github.com/QuangWorkIT]
+[QuangWorkIT](https://github.com/QuangWorkIT)
