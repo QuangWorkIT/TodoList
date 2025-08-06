@@ -43,6 +43,9 @@ A minimal, clean and interactive task manager built with React, TypeScript and N
    http://localhost:5173
    // Back end
    http://localhost:3000
+5. Preview front end
+   ```sh
+   https://todo-list-4lvm.vercel.app/
 
 ## 👤 Author
 
