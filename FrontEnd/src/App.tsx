@@ -15,14 +15,14 @@ function App() {
   // fetch tasks
   useEffect(() => {
     const fetchTasks = async () => {
-      await fetch(`${url}/tasks`, {
+      await fetch(`${url}/api/tasks`, {
         method: "GET"
       })
         .then((response) => {
           return response.json()
         })
         .then((data) => {
-          setTasks(data)
+          setTasks(data.tasks)
         })
         .catch((error) => {
           console.log('Error fetching tasks ', error)
@@ -72,7 +72,7 @@ function App() {
     }
     console.log('tasks to save ', tasks)
     setIsSaving(true)
-    await fetch(`${url}/tasks`, {
+    await fetch(`${url}/api/tasks`, {
       method: "POST",
       body: JSON.stringify({
         tasks: saveTasks
