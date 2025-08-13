@@ -19,7 +19,7 @@ A minimal, clean and interactive task manager built with React, TypeScript and N
 ## 📦 Tech Stack
 
 - **Frontend**: React + TypeScript  
-- **UI**: Button component from `@/components/ui/button`, custom CSS  
+- **UI**: Components from `ShadCN`, Tailwind CSS style  
 - **Backend**: Local REST API using NodeJS 
 - **State Management**: `useState`, `useEffect`, and `useRef` in React Functional Components
 
