@@ -1,12 +1,15 @@
+require('dotenv').config()
+
 const express = require('express')
 const cors = require('cors')
+
 const taskRouter = require('./routers/route')
-
-
-require('dotenv').config()
+const taskMongoRouter = require('./routers/task.routes')
+const userRouter = require('./routers/user.routes')
 const app = express()
 
 const origin = process.env.ALLOWED_ORIGIN
+
 app.use(cors({
   origin: origin,                       // Only allow this origin
   methods: ['GET', 'POST'],             // Only allow these HTTP methods
@@ -14,11 +17,12 @@ app.use(cors({
 }))
 
 app.use(express.json())
-app.use('/api/tasks', taskRouter)
-
+app.use('/api/file/tasks', taskRouter)
+app.use('/api/mongo/tasks', taskMongoRouter)
+app.use('/api/users', userRouter)
 
 app.get('/', (req, res) => {
-    res.send('Welcome server')
+  res.send('Welcome server')
 })
 
 
